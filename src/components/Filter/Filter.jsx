@@ -1,11 +1,11 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { setFilterValue } from 'redux/FilterSlice';
-import { getFilterValue } from 'redux/Selectors';
 import { Label, Input } from './Filter.styled';
+import { setFilterValue } from '../../redux/FilterSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectFilterValue } from 'redux/Selectors';
 
 export const Filter = () => {
   const dispatch = useDispatch();
-  const filter = useSelector(getFilterValue);
+  const filter = useSelector(selectFilterValue);
 
   const filterInputHandler = event => {
     const inputValue = event.target.value;
@@ -13,7 +13,7 @@ export const Filter = () => {
   };
 
   return (
-    <>
+    <div>
       <Label>Find contacts by name</Label>
       <Input
         type="text"
@@ -23,29 +23,7 @@ export const Filter = () => {
         title="Search field"
         required
       />
-      </>
+    </div>
   );
 };
 
-
-//========================================WAS=================================//
-// export const Filter = () => {
-//   const dispatch = useDispatch();
-//   const value = useSelector(state => state.contacts.filter)
-
-//   const changeFilter = e => {
-//     dispatch(updateFilter(e.currentTarget.value));
-//     // console.log(e.currentTarget.value)
-//   };
-
-//       return (
-//         <Form >
-//           <Label>Find contacts by name
-//           <Input
-//           type="text"
-//           value={value}
-//           onChange={changeFilter} />
-//           </Label>
-//         </Form>
-//         )
-// }
