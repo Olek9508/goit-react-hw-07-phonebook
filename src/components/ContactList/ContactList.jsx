@@ -1,4 +1,4 @@
-import { BtnDelete, Text } from './Contact.styled';
+import {ListBox, ListItem, BtnDelete, Text } from './Contact.styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectContactsByName, selectLoadingStatus } from 'redux/Selectors';
 import { deleteContact } from 'redux/fetchApi';
@@ -10,10 +10,10 @@ export const ContactList = () => {
   const isLoading = useSelector(selectLoadingStatus);
 
   return (
-    <div>
+    <ListBox>
       {isLoading && <Loader />}
       {contacts.map(({ id, name, phone }) => (
-        <li key={id}>
+        <ListItem key={id}>
           <Text>Name: {name}</Text>
           <Text>Number: {phone}</Text>
           <BtnDelete
@@ -24,9 +24,9 @@ export const ContactList = () => {
           >
             Delete contact
           </BtnDelete>
-        </li>
+        </ListItem>
       ))}
-    </div>
+    </ListBox>
   );
 };
 

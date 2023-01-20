@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { Container, InnerContainer } from './App.styled';
+import { Container,TitleOne,TitleTwo } from './App.styled';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { Filter } from 'components/Filter/Filter';
 import { ContactList } from 'components/ContactList/ContactList';
@@ -17,13 +17,11 @@ export const App = () => {
   return (
     <>
       <Container>
-        <InnerContainer>
-        <h1>Phonebook</h1>
+        <TitleOne>Phonebook</TitleOne>
         <ContactForm />
-        <h2>Contacts</h2>
+        <TitleTwo>Contacts</TitleTwo>
         <Filter />
           <ContactList />
-          </InnerContainer>
       </Container>
     </>
   );
