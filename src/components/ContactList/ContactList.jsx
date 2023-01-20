@@ -1,7 +1,7 @@
 import { BtnDelete, Text } from './Contact.styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectContactsByName, selectLoadingStatus } from 'redux/Selectors';
-import { deleteContact } from 'redux/FetchApi';
+import { deleteContact } from 'redux/fetchApi';
 import { Loader } from 'components/Loader/SpinningLoader';
 
 export const ContactList = () => {

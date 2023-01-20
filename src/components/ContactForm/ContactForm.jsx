@@ -7,7 +7,7 @@ import {
   BtnSubmit,
 } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/FetchApi';
+import { addContact } from 'redux/fetchApi';
 import { selectContacts } from 'redux/Selectors';
 
 export const ContactForm = () => {
